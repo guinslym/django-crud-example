@@ -1,0 +1,25 @@
+django==1.10.3
+stripe==1.41.1
+django-vote==2.1.2
+pinax-notifications==4.0.0
+django-admin-honeypot==1.0.0
+easy-thumbnails==2.3
+django-grappelli
+django-model-utils
+#
+geocoder==1.17.5
+pendulum==0.6.5
+django-crispy-forms==1.6.1
+django-bootstrap3-datetimepicker==2.2.3
+django-datetime-widget==0.9.3
+django-allauth==0.29.0
+django-hitcount==1.2.2
+
+# https://github.com/mnach/django-simple-blacklist
+django-simple-blacklist==0.1.12
+# https://pypi.python.org/pypi/geoip2
+geoip2==2.4.1
+python-dateutil==2.6.0
+django-braces==1.10.0
+django-bootstrap-pagination==1.5.1
+whitenoise==3.2.2
