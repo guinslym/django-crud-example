@@ -5,8 +5,6 @@ from django.contrib.auth.models import User
 from .models_utils import TimeStampedModel
 from django.core.urlresolvers import reverse_lazy, reverse
 from django.utils import timezone
-from django.core.validators import MaxValueValidator
-from django.core.validators import MinLengthValidator, RegexValidator
 from datetime import datetime, timedelta
 
 def upload_to(instance, filename):
@@ -15,9 +13,11 @@ def upload_to(instance, filename):
 class Album(models.Model, TimeStampedModel):
     #user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     title = models.CharField(max_length=30, blank=False, null=False )
-    bio = models.TextField(max_length=500, blank=True)
+    artist_name = models.CharField(max_length=30, blank=False, null=False )
+    nb_title = models.PositiveSmallIntegerField()
+    description = models.TextField(max_length=500, blank=True, null=True )
     birth_date = models.DateField(default="1995-01-01")
-    profile_image = models.ImageField(
+    image = models.ImageField(
                     upload_to=upload_to,
                     null=True, blank=True
                      )
