@@ -152,7 +152,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media', 'media')
 
 
 SHELL_PLUS_PRE_IMPORTS = (
-    ('applications.musuc', '*')
+    ('applications.music', '*')
 )
 SHELL_PLUS = "ipython"
 SITE_ID = 1
