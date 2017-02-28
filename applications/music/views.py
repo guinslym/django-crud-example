@@ -28,17 +28,17 @@ class HomeView(TemplateView):
     template_name = 'album_list.html'
 
 class AlbumListView(ListView):
-    model = Product
+    model = Album
     template_name = 'album_list.html'
     paginate_by = 25
 
     def get_context_data(self, **kwargs):
-        context = super(ProductListView, self).get_context_data(**kwargs)
+        context = super(AlbumListView, self).get_context_data(**kwargs)
         context['now'] = datetime.now()
         return context
 
     def get_queryset(self):
-        return Product.objects.all()#filter(status__iexact=Article.STATUS.active)
+        return Album.objects.all()#filter(status__iexact=Article.STATUS.active)
 
     def get_paginate_by(self, queryset):
         """ Paginate by specified value in querystring, or use default class property value.  """
