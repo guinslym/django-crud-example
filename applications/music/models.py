@@ -9,7 +9,9 @@ from django.core.validators import MaxValueValidator
 from django.core.validators import MinLengthValidator, RegexValidator
 from datetime import datetime, timedelta
 
-
+def upload_to(instance, filename):
+    return "%s/%s" % (instance._meta.app_label, filename)
+    
 class Album(models.Model, TimeStampedModel):
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     bio = models.TextField(max_length=500, blank=True)
