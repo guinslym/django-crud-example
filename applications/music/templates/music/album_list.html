@@ -8,17 +8,46 @@
 
 	{% block content %}
 
-	{% for music in object_list %}
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-6 col-lg-offset-3">
-				<p>{{music}}</p>
+			<div class="col-lg-10 col-lg-offset-1">
+			
+			 <h2>Music ListView</h2>
+			  <table class="table table-bordered">
+			    <thead>
+			      <tr>
+			        <th>Title</th>
+			        <th>artist_name</th>
+			        <th>nb_title</th>
+			        <th>Show</th>
+			        <th>Update</th>
+			        <th>Delete</th>
+			      </tr>
+			    </thead>
+			    <tbody>
+				{% for music in object_list %}
+			      <tr>
+			        <td>{{music.title}}</td>
+			        <td>{{music.artist_name}}</td>
+			        <td>{{music.nb_title}}</td>
+			        <td>
+			        	<button type="button" class="btn btn-info btn-sm">Primary</button>
+			        </td>
+			        <td>
+			        	<button type="button" class="btn btn-warning btn-sm">Primary</button>
+			        </td>
+			        <td>
+			        	<button type="button" class="btn btn-danger btn-sm">Primary</button>
+			        </td>
+			      </tr>
+				{% endfor %}
+			    </tbody>
+			  </table>
 			</div>
 		</div>
 	</div>
 	
 		
 	
-	{% endfor %}
 	
 	{% endblock %}
