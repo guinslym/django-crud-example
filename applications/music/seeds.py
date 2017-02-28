@@ -8,4 +8,4 @@ for i in Album.objects.all():
 
 user = mixer.blend(User)
 for i in range(25):
-	Album = mixer.blend(Album)
+	album = mixer.blend(Album)
