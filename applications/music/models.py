@@ -10,7 +10,7 @@ from datetime import datetime, timedelta
 def upload_to(instance, filename):
     return "%s/%s" % (instance._meta.app_label, filename)
 
-class Album(models.Model, TimeStampedModel):
+class Album(TimeStampedModel, models.Model):
     #user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     title = models.CharField(max_length=30, blank=False, null=False )
     artist_name = models.CharField(max_length=30, blank=False, null=False )
