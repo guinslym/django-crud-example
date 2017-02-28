@@ -22,6 +22,16 @@ from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-     #url(r'^music/', include('applications.music.urls', namespace='music')),
+     url(r'^music/', include('applications.music.urls', namespace='music')),
      url(r'^', include('applications.music.urls')),
 ]
+
+if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns += [
+        url(r'^__debug__/', include(debug_toolbar.urls)),
+    ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns+=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

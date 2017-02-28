@@ -5,6 +5,7 @@ from django.contrib import admin
 from django.views.generic import TemplateView
 from django.contrib.auth import views as auth_views
 
+
 from .views import HomeView, AlbumListView
 
 urlpatterns = [

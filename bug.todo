@@ -1,0 +1,13 @@
+Bug:
+ ☐ djdt: is not define
+
+DJDT:
+ ☐ django.urls.exceptions.NoReverseMatch: 'djdt' is not a registered namespace
+ ☐ I need to import django-debug-toolbar in urls.py
+if settings.DEBUG
+    import debug_toolbar
+    urlpatterns += [
+        url(r'^__debug__/', include(debug_toolbar.urls)),
+    ]
+
+

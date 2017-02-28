@@ -25,11 +25,11 @@ from .models  import Album
 #from .forms import ( ProductForm, ProductEditForm )
 
 class HomeView(TemplateView):
-    template_name = 'album_list.html'
+    template_name = 'music/album_list.html'
 
 class AlbumListView(ListView):
     model = Album
-    template_name = 'album_list.html'
+    template_name = 'music/album_list.html'
     paginate_by = 25
 
     def get_context_data(self, **kwargs):
