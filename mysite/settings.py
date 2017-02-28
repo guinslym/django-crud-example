@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
-    
+
     #third-party app
     'debug_toolbar',
     'django_extensions',
@@ -66,7 +66,10 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+        #music
+         os.path.join(BASE_DIR, 'applications', 'music', 'templates'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -128,5 +131,25 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
+# https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+INTERNAL_IPS = ('127.0.0.1')
+
+
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join('staticfiles')
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media', 'media')
+
+
+
+SHELL_PLUS_PRE_IMPORTS = (
+    ('applications.musuc', '*')
+)
+SHELL_PLUS = "ipython"
+SITE_ID = 1
