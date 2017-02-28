@@ -7,7 +7,6 @@ pendulum==0.6.5
 django-crispy-forms==1.6.1
 django-bootstrap3-datetimepicker==2.2.3
 django-datetime-widget==0.9.3
-django-allauth==0.29.0
 
 # https://pypi.python.org/pypi/geoip2
 python-dateutil==2.6.0

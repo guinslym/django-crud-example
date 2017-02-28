@@ -7,10 +7,11 @@
    ☐ Gucci Gwop
 
 Steps:
- ☐ Configuration
- ☐ Creating the project
- ☐ Create a repo
- ☐ create a .gitrepo
- ☐ install requirements
- ☐ python manage.py migrate
+ ☐ 1-Configuration
+   ☐ Creating the project
+   ☐ Create a repo
+   ☐ create a .gitrepo
+   ☐ install requirements
+   ☐ python manage.py migrate
+   ☐ 2
  ☐ 
