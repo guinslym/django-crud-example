@@ -11,11 +11,11 @@ from datetime import datetime, timedelta
 
 def upload_to(instance, filename):
     return "%s/%s" % (instance._meta.app_label, filename)
-    
+
 class Album(models.Model, TimeStampedModel):
-    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    #user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    title = models.CharField(max_length=30, blank=False, null=False )
     bio = models.TextField(max_length=500, blank=True)
-    location = models.CharField(max_length=30, blank=True, null=True )
     birth_date = models.DateField(default="1995-01-01")
     profile_image = models.ImageField(
                     upload_to=upload_to,
@@ -23,7 +23,7 @@ class Album(models.Model, TimeStampedModel):
                      )
 
     def __str__(self):
-    	return str(self.id)
+    	return str(self.title)
 
     class Meta:
         verbose_name_plural = "Albums"
