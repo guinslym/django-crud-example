@@ -11,20 +11,22 @@
 
 
 <style>
-	body {
-  padding-top: 60px;
-  padding-bottom: 30px;
+	
+body {
+  padding-top: 50px;
+}
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
 }
 
 </style>
 </head>
 <body>
 
-  {#% include 'wadiyabi/includes/navbar.html' %#}
+  {% include 'music/includes/navbar.html' %}
 
-  <h1>Base Template</h1>
-
-   {% block content %}
+  {% block content %}
   {% endblock %}
   
 

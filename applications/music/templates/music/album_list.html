@@ -9,8 +9,14 @@
 	{% block content %}
 
 	{% for music in object_list %}
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6 col-lg-offset-3">
+				<p>{{music}}</p>
+			</div>
+		</div>
+	</div>
 	
-	<p>{{music}}</p>
 		
 	
 	{% endfor %}
