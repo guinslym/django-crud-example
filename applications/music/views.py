@@ -18,7 +18,6 @@ from django.contrib.messages.views import SuccessMessageMixin
 #django-friendship
 #from friendship.models import Friend, Follow    
 
-
 #models
 from .models  import Album
 
@@ -45,7 +44,7 @@ class AlbumListView(ListView):
         """ Paginate by specified value in querystring, or use default class property value.  """
         return self.request.GET.get('paginate_by', self.paginate_by)
 
-product_list = ProductListView.as_view()
+album_list = AlbumListView.as_view()
 
 '''
 class ProductCreateView(SuccessMessageMixin, CreateView):
