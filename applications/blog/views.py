@@ -12,7 +12,6 @@ from braces.views import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 
 #messages
-from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 
 #django-friendship
@@ -23,17 +22,18 @@ from .models  import Article
 #from .forms  import AlbumForm
 
 from django.views.generic.base import TemplateView
+
 class HomeView(TemplateView):
-    template_name = 'blog/album_list.html'
+    template_name = 'blog/article_list.html'
 
 
-class AlbumListView(ListView):
+class ArticleListView(ListView):
     model = Album
-    template_name = 'music/album_list.html'
+    template_name = 'music/article_list.html'
     paginate_by = 25
 
     def get_context_data(self, **kwargs):
-        context = super(AlbumListView, self).get_context_data(**kwargs)
+        context = super(ArticleListView, self).get_context_data(**kwargs)
         context['now'] = datetime.now()
         return context
 
@@ -44,7 +44,7 @@ class AlbumListView(ListView):
         """ Paginate by specified value in querystring, or use default class property value.  """
         return self.request.GET.get('paginate_by', self.paginate_by)
 
-album_list = AlbumListView.as_view()
+album_list = ArticleListView.as_view()
 
 '''
 class AlbumCreateView(SuccessMessageMixin, CreateView):

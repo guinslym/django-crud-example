@@ -13,10 +13,10 @@ def upload_to(instance, filename):
 class Article(TimeStampedModel, models.Model):
     #user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     title = models.CharField(max_length=30, blank=False, null=False )
-    description = models.TextField(max_length=500, blank=True, null=True )
+    description = models.TextField(max_length=500, blank=False, null=False )
     image = models.ImageField(
                     upload_to=upload_to,
-                    null=True, blank=True
+                    null=False, blank=False
                      )
 
     def __str__(self):
