@@ -49,7 +49,7 @@ article_list = ArticleListView.as_view()
 
 class ArticleCreateView(SuccessMessageMixin, CreateView):
     form_class = ArticleForm
-    template_name = "blog/album_create.html"
+    template_name = "blog/article_create.html"
     success_message = 'Successfully Added a Post entry'
 
     def form_valid(self, form):
@@ -69,11 +69,11 @@ class ArticleDetailView(DetailView):
         return context
 
 article_detail = ArticleDetailView.as_view()
-'''
-class AlbumUpdateView(SuccessMessageMixin, UpdateView):
-    model = Album
-    form_class = AlbumForm
-    template_name = "music/album_create.html"
+
+class ArticleUpdateView(SuccessMessageMixin, UpdateView):
+    model = Article
+    form_class = ArticleForm
+    template_name = "music/article_create.html"
     success_message = 'Successfully Updated a Post entry'
 
     def dispatch(self, *args, **kwargs):
@@ -85,13 +85,13 @@ class AlbumUpdateView(SuccessMessageMixin, UpdateView):
         #self.object.author = self.request.user
         return super(self.__class__, self).form_valid(form)
 
-album_update = login_required(AlbumUpdateView.as_view())
+article_update = login_required(ArticleUpdateView.as_view())
 
 
-class  AlbumDeleteView(SuccessMessageMixin, DeleteView):
-    model = Album
+class  ArticleDeleteView(SuccessMessageMixin, DeleteView):
+    model = Article
     success_message = 'Successfully Deleted a Post entry'
-    success_url = reverse_lazy('music:album_list')
+    success_url = reverse_lazy('music:article_list')
 
     def dispatch(self, request, *args, **kwargs):
         return super(self.__class__, self).dispatch(request, *args, **kwargs)
@@ -99,5 +99,3 @@ class  AlbumDeleteView(SuccessMessageMixin, DeleteView):
     def delete(self, request, *args, **kwargs):
     	messages.success(self.request, self.success_message)
     	return super(self.__class__, self).delete(request, *args, **kwargs)
-
-'''

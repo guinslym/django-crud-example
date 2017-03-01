@@ -12,7 +12,7 @@
 		<div class="row">
 			<div class="col-lg-10 col-lg-offset-1">
 				<h2>
-				<a class="btn right btn-md" href="">Create Album</a></h2>
+				<a class="btn right btn-md" href="{% url 'blog:article_create' %}">Create Album</a></h2>
 			
 			 <h2>Music ListView</h2>
 			  <table class="table table-bordered">
@@ -36,10 +36,10 @@
 			        	<a href="{% url 'blog:article_detail' article.id %}" class="btn btn-info btn-sm">Show</a>
 			        </td>
 			        <td>
-			        	<a href="" class="btn btn-warning btn-sm">Update</a>
+			        	<a href="{% url 'blog:article_update' article.id %}" class="btn btn-warning btn-sm">Update</a>
 			        </td>
 			        <td>
-			         <form class="right" method="POST" action="">
+			         <form class="right" method="POST" action="{% url 'blog:article_delete' article.id %}">
 				         {% csrf_token %}<input class="btn btn-danger btn-sm" type="submit" value="DELETE">
 				      </form>
 			        </td>

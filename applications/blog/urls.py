@@ -8,8 +8,8 @@ from .views import (
 	#CRUD
 	ArticleCreateView,
 	ArticleDetailView,
-	#ArticleUpdateView,
-	#ArticleDeleteView
+	ArticleUpdateView,
+	ArticleDeleteView
 	)
 
 
@@ -26,7 +26,7 @@ urlpatterns = [
    #Read (Detail/Show)
    url(r'^(?P<pk>\d+)/$', ArticleDetailView.as_view(), name='article_detail'),
    #Update
-   #url(r'^update/(?P<pk>\d+)/$', ArticleUpdateView.as_view(), name='article_update'),
+   url(r'^update/(?P<pk>\d+)/$', ArticleUpdateView.as_view(), name='article_update'),
    #Delete
-   #url(r'^delete/(?P<pk>\d+)/$', ArticleDeleteView.as_view(), name='article_delete'),
+   url(r'^delete/(?P<pk>\d+)/$', ArticleDeleteView.as_view(), name='article_delete'),
 ]
