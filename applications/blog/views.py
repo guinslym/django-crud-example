@@ -46,31 +46,30 @@ class ArticleListView(ListView):
 
 article_list = ArticleListView.as_view()
 
-'''
-class AlbumCreateView(SuccessMessageMixin, CreateView):
-    form_class = AlbumForm
-    template_name = "music/album_create.html"
+
+class ArticleCreateView(SuccessMessageMixin, CreateView):
+    form_class = ArticleForm
+    template_name = "blog/album_create.html"
     success_message = 'Successfully Added a Post entry'
 
     def form_valid(self, form):
         self.object = form.save(commit=False)
         #self.object.author = self.request.user
-        return super(AlbumCreateView, self).form_valid(form)
+        return super(ArticleCreateView, self).form_valid(form)
 
-album_new = login_required(AlbumCreateView.as_view())
+article_new = login_required(ArticleCreateView.as_view())
 
-
-class AlbumDetailView(DetailView):
-    model = Album
-    template_name = 'music/album_detail.html'
+class ArticleDetailView(DetailView):
+    model = Article
+    template_name = 'blog/article_detail.html'
 
     def get_context_data(self, **kwargs):
-        context = super(AlbumDetailView, self).get_context_data(**kwargs)
+        context = super(ArticleDetailView, self).get_context_data(**kwargs)
         context['now'] = datetime.now()
         return context
 
-album_detail = AlbumDetailView.as_view()
-
+article_detail = ArticleDetailView.as_view()
+'''
 class AlbumUpdateView(SuccessMessageMixin, UpdateView):
     model = Album
     form_class = AlbumForm
