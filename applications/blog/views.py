@@ -12,6 +12,7 @@ from braces.views import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 
 #messages
+from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 
 #django-friendship
@@ -73,7 +74,7 @@ article_detail = ArticleDetailView.as_view()
 class ArticleUpdateView(SuccessMessageMixin, UpdateView):
     model = Article
     form_class = ArticleForm
-    template_name = "music/article_create.html"
+    template_name = "blog/article_create.html"
     success_message = 'Successfully Updated a Post entry'
 
     def dispatch(self, *args, **kwargs):
@@ -91,7 +92,7 @@ article_update = login_required(ArticleUpdateView.as_view())
 class  ArticleDeleteView(SuccessMessageMixin, DeleteView):
     model = Article
     success_message = 'Successfully Deleted a Post entry'
-    success_url = reverse_lazy('music:article_list')
+    success_url = reverse_lazy('blog:article_list')
 
     def dispatch(self, request, *args, **kwargs):
         return super(self.__class__, self).dispatch(request, *args, **kwargs)
