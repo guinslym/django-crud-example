@@ -4,7 +4,7 @@ from django.conf.urls import include, url
 from .views import (
 	#Other
 	HomeView,
-	#ArticleListView,
+	ArticleListView,
 	#CRUD
 	#ArticleCreateView,
 	#ArticleDetailView,
@@ -15,7 +15,7 @@ from .views import (
 
 urlpatterns = [
    url(r'^home/$', HomeView.as_view(), name='blog_home'),
-   #url(r'^list/$', ArticleListView.as_view(), name='article_list'),
+   url(r'^list/$', ArticleListView.as_view(), name='article_list'),
 
 
    #########

@@ -101,11 +101,3 @@ class  AlbumDeleteView(SuccessMessageMixin, DeleteView):
     def delete(self, request, *args, **kwargs):
     	messages.success(self.request, self.success_message)
     	return super(self.__class__, self).delete(request, *args, **kwargs)
-'''
-class AlbumDeleteView(DeleteView):
-    model = Album
-    success_url = reverse_lazy('music:album_list')
-
-product_delete = login_required(AlbumDeleteView.as_view())
-
-'''
