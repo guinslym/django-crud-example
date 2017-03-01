@@ -1,0 +1,59 @@
+{% extends 'cardealer/base.html' %}
+{% load staticfiles %}
+
+ 	{% block style %}
+	{% endblock %}
+
+	{% block content %}
+	
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-10 col-lg-offset-1">
+				<h2>
+				<a class="btn right btn-md" href="{% url 'cardealer:car_create' %}">Create Product</a></h2>
+			
+			 <h2>Music ListView</h2>
+			  <table class="table table-bordered">
+			    <thead>
+			      <tr>
+			        <th>car_name</th>
+			        <th>car_model</th>
+			        <th>description</th>
+			        <th>price</th>
+			        <th>image</th>
+			        <th></th>
+			        <th></th>
+			        <th></th>
+			      </tr>
+			    </thead>
+			    <tbody>
+				{% for car in object_list %}
+			      <tr>
+			        <td>{{car.car_name}}</td>
+			        <td>{{car.car_model}}</td>
+			        <td>{{car.description|truncatechars:100 }}</td>
+			        <td>{{car.price}}</td>
+			        <td>{{car.image.url}}</td>
+			        <td>
+			        	<a href="{% url 'cardealer:car_detail' car.id %}" class="btn btn-info btn-sm">Show</a>
+			        </td>
+			        <td>
+			        	<a href="{% url 'cardealer:car_update' car.id %}" class="btn btn-warning btn-sm">Update</a>
+			        </td>
+			        <td>
+			         <form class="right" method="POST" action="{% url 'cardealer:car_delete' car.id %}">
+				         {% csrf_token %}<input class="btn btn-danger btn-sm" type="submit" value="DELETE">
+				      </form>
+			        </td>
+			      </tr>
+				{% endfor %}
+			    </tbody>
+			  </table>
+			</div>
+		</div>
+	</div>
+	
+		
+	
+	
+	{% endblock %}
