@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'applications.music',
     'applications.blog',
     'applications.ecommerce',
+    'applications.cardealer',
 ]
 
 MIDDLEWARE = [

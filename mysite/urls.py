@@ -25,7 +25,8 @@ urlpatterns = [
      url(r'^music/', include('applications.music.urls', namespace='music')),
      url(r'^blog/', include('applications.blog.urls', namespace='blog')),
      url(r'^ecommerce/', include('applications.ecommerce.urls', namespace='ecommerce')),
-     url(r'^', include('applications.ecommerce.urls')),
+     url(r'^cardealer/', include('applications.cardealer.urls', namespace='cardealer')),
+     url(r'^', include('applications.cardealer.urls')),
 ]
 
 if settings.DEBUG:
