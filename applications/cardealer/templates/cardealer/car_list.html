@@ -29,9 +29,9 @@
 			    <tbody>
 				{% for car in object_list %}
 			      <tr>
-			        <td>{{car.car_name}}</td>
-			        <td>{{car.car_model}}</td>
-			        <td>{{car.description|truncatechars:100 }}</td>
+			        <td>{{car.car_name|truncatechars:9}}</td>
+			        <td>{{car.car_model|truncatechars:9}}</td>
+			        <td>{{car.description|truncatechars:60 }}</td>
 			        <td>{{car.price}}</td>
 			        <td>{{car.image.url}}</td>
 			        <td>
