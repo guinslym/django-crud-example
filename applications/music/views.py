@@ -46,19 +46,19 @@ class AlbumListView(ListView):
 
 album_list = AlbumListView.as_view()
 
-'''
-class ProductCreateView(SuccessMessageMixin, CreateView):
-    form_class = ProductForm
-    template_name = "product_create.html"
+
+class AlbumCreateView(SuccessMessageMixin, CreateView):
+    form_class = AlbumForm
+    template_name = "music/album_create.html"
     success_message = 'Successfully Added a Post entry'
 
     def form_valid(self, form):
         self.object = form.save(commit=False)
         self.object.author = self.request.user
-        return super(ProductCreateView, self).form_valid(form)
+        return super(AlbumCreateView, self).form_valid(form)
 
-product_new = login_required(ProductCreateView.as_view())
-
+product_new = login_required(AlbumCreateView.as_view())
+'''
 class ProductUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     model = Product
     form_class = ProductEditForm
