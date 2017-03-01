@@ -29,7 +29,7 @@ class HomeView(TemplateView):
 
 class ArticleListView(ListView):
     model = Article
-    template_name = 'music/article_list.html'
+    template_name = 'blog/article_list.html'
     paginate_by = 25
 
     def get_context_data(self, **kwargs):
