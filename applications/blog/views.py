@@ -19,7 +19,7 @@ from django.contrib.messages.views import SuccessMessageMixin
 
 #models
 from .models  import Article
-#from .forms  import AlbumForm
+from .forms  import AlbumForm
 
 from django.views.generic.base import TemplateView
 
