@@ -31,7 +31,7 @@
 			        <td>{{music.artist_name}}</td>
 			        <td>{{music.nb_title}}</td>
 			        <td>
-			        	<a href="#" class="btn btn-info btn-sm">Show</a>
+			        	<a href="{% url 'album_detail' music.id %}" class="btn btn-info btn-sm">Show</a>
 			        </td>
 			        <td>
 			        	<button type="button" class="btn btn-warning btn-sm">Update</button>
