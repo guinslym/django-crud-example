@@ -90,29 +90,22 @@ class AlbumUpdateView(SuccessMessageMixin, UpdateView):
 album_update = login_required(AlbumUpdateView.as_view())
 
 
-'''
-
-class  ProductDeleteView(SuccessMessageMixin, DeleteView):
-    model = Product
-    template_name = '_delete_confirm.html'
+class  AlbumDeleteView(SuccessMessageMixin, DeleteView):
+    model = Album
     success_message = 'Successfully Deleted a Post entry'
+    success_url = reverse_lazy('music:album_list')
 
     def dispatch(self, request, *args, **kwargs):
         return super(self.__class__, self).dispatch(request, *args, **kwargs)
 
-    def get_context_data(self, **kwargs):
-        context = super(self.__class__, self).get_context_data(**kwargs)
-        context['back_page'] = reverse_lazy('wadiyabi:product-home')
-        return context
+    def delete(self, request, *args, **kwargs):
+    	messages.success(self.request, self.success_message)
+    	return super(self.__class__, self).delete(request, *args, **kwargs)
+'''
+class AlbumDeleteView(DeleteView):
+    model = Album
+    success_url = reverse_lazy('music:album_list')
 
-    def get_success_url(self):
-        messages.success_message(self.request, 'Successfully Deleted Post entry')
-        return reverse_lazy('wadiyabi:product-home')
-
-product_delete = login_required(ProductDeleteView.as_view())
-
-
-
+product_delete = login_required(AlbumDeleteView.as_view())
 
 '''
-

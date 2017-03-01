@@ -10,21 +10,25 @@ from .views import HomeView, AlbumListView
 from .views import (
 	AlbumCreateView,
 	AlbumDetailView,
-	AlbumUpdateView
+	AlbumUpdateView,
+	AlbumDeleteView
 	)
 
 
 urlpatterns = [
-   url(r'^home/$', HomeView.as_view(), name='music_home'),
-   url(r'^list/$', AlbumListView.as_view(), name='music_list'),
+   url(r'^home/$', HomeView.as_view(), name='album_home'),
+   url(r'^list/$', AlbumListView.as_view(), name='album_list'),
+
+
    #########
    # CRUD  #
    #########
    #Create
-   url(r'^create/$', AlbumCreateView.as_view(), name='music_create'),
-   #Read (Detail)
+   url(r'^create/$', AlbumCreateView.as_view(), name='album_create'),
+   #Read (Detail/Show)
    url(r'^(?P<pk>\d+)/$', AlbumDetailView.as_view(), name='album_detail'),
    #Update
    url(r'^update/(?P<pk>\d+)/$', AlbumUpdateView.as_view(), name='album_update'),
-	#url(r'^lineup_post/(?P<pk>\d+)/$', lineupView.LineupDetailView.as_view(), name="post"),
+   #Delete
+   url(r'^delete/(?P<pk>\d+)/$', AlbumDeleteView.as_view(), name='album_delete'),
 ]
