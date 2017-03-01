@@ -23,6 +23,7 @@ from django.contrib.auth import views as auth_views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
      url(r'^music/', include('applications.music.urls', namespace='music')),
+     url(r'^music/', include('applications.blog.urls', namespace='blog')),
      url(r'^', include('applications.music.urls')),
 ]
 
