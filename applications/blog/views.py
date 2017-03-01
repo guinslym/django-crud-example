@@ -44,7 +44,7 @@ class ArticleListView(ListView):
         """ Paginate by specified value in querystring, or use default class property value.  """
         return self.request.GET.get('paginate_by', self.paginate_by)
 
-album_list = ArticleListView.as_view()
+article_list = ArticleListView.as_view()
 
 '''
 class AlbumCreateView(SuccessMessageMixin, CreateView):

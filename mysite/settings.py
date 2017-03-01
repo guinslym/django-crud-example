@@ -73,6 +73,7 @@ TEMPLATES = [
         'DIRS': [
         #music
          os.path.join(BASE_DIR, 'applications', 'music', 'templates'),
+         os.path.join(BASE_DIR, 'applications', 'blog', 'templates'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
