@@ -20,6 +20,7 @@ from django.contrib.messages.views import SuccessMessageMixin
 
 #models
 from .models  import Album
+from .forms  import AlbumForm
 
 #forms
 #from .forms import ( ProductForm, ProductEditForm )
