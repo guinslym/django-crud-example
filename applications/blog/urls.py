@@ -6,8 +6,8 @@ from .views import (
 	HomeView,
 	ArticleListView,
 	#CRUD
-	#ArticleCreateView,
-	#ArticleDetailView,
+	ArticleCreateView,
+	ArticleDetailView,
 	#ArticleUpdateView,
 	#ArticleDeleteView
 	)
@@ -22,9 +22,9 @@ urlpatterns = [
    # CRUD  #
    #########
    #Create
-   #url(r'^create/$', ArticleCreateView.as_view(), name='article_create'),
+   url(r'^create/$', ArticleCreateView.as_view(), name='article_create'),
    #Read (Detail/Show)
-   #url(r'^(?P<pk>\d+)/$', ArticleDetailView.as_view(), name='article_detail'),
+   url(r'^(?P<pk>\d+)/$', ArticleDetailView.as_view(), name='article_detail'),
    #Update
    #url(r'^update/(?P<pk>\d+)/$', ArticleUpdateView.as_view(), name='article_update'),
    #Delete

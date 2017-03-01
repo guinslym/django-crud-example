@@ -33,7 +33,7 @@
 			        <td>{{article.description|truncatechars:100 }}</td>
 			        <td>{{article.image.url}}</td>
 			        <td>
-			        	<a href="" class="btn btn-info btn-sm">Show</a>
+			        	<a href="{% url 'blog:article_detail' article.id %}" class="btn btn-info btn-sm">Show</a>
 			        </td>
 			        <td>
 			        	<a href="" class="btn btn-warning btn-sm">Update</a>
