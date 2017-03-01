@@ -9,7 +9,8 @@ from django.contrib.auth import views as auth_views
 from .views import HomeView, AlbumListView
 from .views import (
 	AlbumCreateView,
-	AlbumDetailView
+	AlbumDetailView,
+	AlbumUpdateView
 	)
 
 

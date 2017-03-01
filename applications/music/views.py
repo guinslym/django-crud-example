@@ -71,9 +71,9 @@ class AlbumDetailView(DetailView):
         return context
 
 album_detail = AlbumDetailView.as_view()
-'''
-class ProductUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
-    model = Product
+
+class AlbumUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
+    model = Album
     form_class = ProductEditForm
     template_name = "product_update.html"
     success_message = 'Successfully Updated a Post entry'
@@ -87,8 +87,10 @@ class ProductUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
         self.object.author = self.request.user
         return super(self.__class__, self).form_valid(form)
 
-product_edit = login_required(ProductUpdateView.as_view())
+product_edit = login_required(AlbumUpdateView.as_view())
 
+
+'''
 
 class  ProductDeleteView(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
     model = Product
