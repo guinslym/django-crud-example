@@ -20,7 +20,7 @@ from django.contrib.messages.views import SuccessMessageMixin
 
 #models
 from .models  import Product
-#from .forms  import ProductForm
+from .forms  import ProductForm
 
 from django.views.generic.base import TemplateView
 
