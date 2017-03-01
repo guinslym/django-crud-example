@@ -18,7 +18,7 @@ class Product(TimeStampedModel, models.Model):
                     upload_to=upload_to,
                     null=False, blank=False
                      )
-   	price = models.DecimalField(max_digits=5, decimal_places=2, blank=False, null=False )
+    price = models.DecimalField(max_digits=5, decimal_places=2, blank=False, null=False )
 
     def __str__(self):
     	return str(self.title)
