@@ -7,9 +7,21 @@ from django.contrib.auth import views as auth_views
 
 
 from .views import HomeView, AlbumListView
+from .views import (
+	AlbumCreateView,
+	AlbumDetailView
+	)
+
 
 urlpatterns = [
    url(r'^home/$', HomeView.as_view(), name='music_home'),
    url(r'^list/$', AlbumListView.as_view(), name='music_list'),
+   #########
+   # CRUD  #
+   #########
+   #Create
+   url(r'^create/$', AlbumCreateView.as_view(), name='music_create'),
+   #Read (Detail)
+   url(r'^(?P<pk>\d+)/$', AlbumDetailView.as_view(), name='album_detail'),
 	#url(r'^lineup_post/(?P<pk>\d+)/$', lineupView.LineupDetailView.as_view(), name="post"),
 ]

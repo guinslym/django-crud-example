@@ -58,7 +58,19 @@ class AlbumCreateView(SuccessMessageMixin, CreateView):
         self.object.author = self.request.user
         return super(AlbumCreateView, self).form_valid(form)
 
-product_new = login_required(AlbumCreateView.as_view())
+album_new = login_required(AlbumCreateView.as_view())
+
+
+class AlbumDetailView(DetailView):
+    model = Album
+    template_name = 'music/album_detail.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(AlbumDetailView, self).get_context_data(**kwargs)
+        context['now'] = datetime.now()
+        return context
+
+album_detail = AlbumDetailView.as_view()
 '''
 class ProductUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     model = Product
@@ -99,16 +111,6 @@ product_delete = login_required(ProductDeleteView.as_view())
 
 
 
-class ProductDetailView(DetailView):
-    model = Product
-    template_name = 'detail.html'
-
-    def get_context_data(self, **kwargs):
-        context = super(ProductDetailView, self).get_context_data(**kwargs)
-        context['now'] = datetime.now()
-        return context
-
-product_detail = ProductDeleteView.as_view()
 
 '''
 
