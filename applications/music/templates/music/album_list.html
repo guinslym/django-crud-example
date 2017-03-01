@@ -31,10 +31,10 @@
 			        <td>{{music.artist_name}}</td>
 			        <td>{{music.nb_title}}</td>
 			        <td>
-			        	<a href="{% url 'album_detail' music.id %}" class="btn btn-info btn-sm">Show</a>
+			        	<a href="{% url 'music:album_detail' music.id %}" class="btn btn-info btn-sm">Show</a>
 			        </td>
 			        <td>
-			        	<a hre="{% url 'album_update' music.id %}" class="btn btn-warning btn-sm">Update</a>
+			        	<a href="{% url 'music:album_update' music.id %}" class="btn btn-warning btn-sm">Update</a>
 			        </td>
 			        <td>
 			        	<button type="button" class="btn btn-danger btn-sm">Delete</button>

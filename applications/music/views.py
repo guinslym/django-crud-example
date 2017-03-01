@@ -75,7 +75,7 @@ album_detail = AlbumDetailView.as_view()
 class AlbumUpdateView(SuccessMessageMixin, UpdateView):
     model = Album
     form_class = AlbumForm
-    template_name = "album_create.html"
+    template_name = "music/album_create.html"
     success_message = 'Successfully Updated a Post entry'
 
     def dispatch(self, *args, **kwargs):
