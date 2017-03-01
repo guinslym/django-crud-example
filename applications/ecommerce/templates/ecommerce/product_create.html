@@ -1,0 +1,22 @@
+{% extends 'ecommerce/base.html' %}
+{% load staticfiles %}
+
+{% block style %}
+{% endblock %}
+
+
+{% block content %}
+<div class="container">
+	<div class="row">
+		<div class="col-lg-10 col-lg-1-offset">
+			<form action="." method="post" enctype="multipart/form-data">
+			    {% csrf_token %}
+			    {{ form.as_p }}
+			    <input type="submit" value="Submit" />
+			</form>
+			
+		</div>
+	</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'ecommerce/base.html' %}
+{% load staticfiles %}
+
+{% block style %}
+{% endblock %}
+
+
+
+{% block content %}
+<div class="container">
+	<div class="row">
+		<div class="col-lg-10 col-lg-1-offset">
+			<p>ID: {{ object.id }}</p>
+			<p>Title: {{ object.title }}</p>
+			<p>Description: {{ object.description }}</p>
+			<p>Image_url: {{ object.image }}</p>
+		</div>
+	</div>
+</div>
+
+
+{% endblock %}
