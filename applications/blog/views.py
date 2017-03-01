@@ -28,7 +28,7 @@ class HomeView(TemplateView):
 
 
 class ArticleListView(ListView):
-    model = Album
+    model = Article
     template_name = 'music/article_list.html'
     paginate_by = 25
 
@@ -38,7 +38,7 @@ class ArticleListView(ListView):
         return context
 
     def get_queryset(self):
-        return Album.objects.all()#filter(status__iexact=Article.STATUS.active)
+        return Article.objects.all()#filter(status__iexact=Article.STATUS.active)
 
     def get_paginate_by(self, queryset):
         """ Paginate by specified value in querystring, or use default class property value.  """
