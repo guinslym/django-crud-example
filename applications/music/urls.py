@@ -24,5 +24,7 @@ urlpatterns = [
    url(r'^create/$', AlbumCreateView.as_view(), name='music_create'),
    #Read (Detail)
    url(r'^(?P<pk>\d+)/$', AlbumDetailView.as_view(), name='album_detail'),
+   #Update
+   url(r'^(?P<pk>\d+)/$', AlbumUpdateView.as_view(), name='album_update'),
 	#url(r'^lineup_post/(?P<pk>\d+)/$', lineupView.LineupDetailView.as_view(), name="post"),
 ]

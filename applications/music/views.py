@@ -55,7 +55,7 @@ class AlbumCreateView(SuccessMessageMixin, CreateView):
 
     def form_valid(self, form):
         self.object = form.save(commit=False)
-        self.object.author = self.request.user
+        #self.object.author = self.request.user
         return super(AlbumCreateView, self).form_valid(form)
 
 album_new = login_required(AlbumCreateView.as_view())
@@ -72,10 +72,10 @@ class AlbumDetailView(DetailView):
 
 album_detail = AlbumDetailView.as_view()
 
-class AlbumUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
+class AlbumUpdateView(SuccessMessageMixin, UpdateView):
     model = Album
-    form_class = ProductEditForm
-    template_name = "product_update.html"
+    form_class = AlbumForm
+    template_name = "album_create.html"
     success_message = 'Successfully Updated a Post entry'
 
     def dispatch(self, *args, **kwargs):
@@ -84,15 +84,15 @@ class AlbumUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     def form_valid(self, form):
         self.object = form.save(commit=False)
         #migh need to remove that line
-        self.object.author = self.request.user
+        #self.object.author = self.request.user
         return super(self.__class__, self).form_valid(form)
 
-product_edit = login_required(AlbumUpdateView.as_view())
+album_update = login_required(AlbumUpdateView.as_view())
 
 
 '''
 
-class  ProductDeleteView(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
+class  ProductDeleteView(SuccessMessageMixin, DeleteView):
     model = Product
     template_name = '_delete_confirm.html'
     success_message = 'Successfully Deleted a Post entry'
